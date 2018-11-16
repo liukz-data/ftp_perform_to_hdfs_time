@@ -54,6 +54,7 @@ public class FtpToDisk {
                 //System.out.println(fileName);
               //  String regiog_c=regionMinus15(region)+"00-"+region+"00";
                 String regiog_c=region+"00-";
+                if(!fileName.matches("^tpd_eutrancell_q-ODM-.*_NB_V2.9.*\\.zip$")){
                 //if(fileName.matches("^tpd_eutrancell_q-ODM-A\\.WL\\.PM\\.FILE_WL_4G_V2\\.6\\.0_ENODEB_PM.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-A.WL.PM.FILE_WL_4G_V2.7.0_ENODEB.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-A.WL.PM.FILE_WL_LTE_COMMON_ENB_TDD_V2.9_XML_PM.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-A.WL.PM.FILE_WL_LTE_COMMON_FDD_V3.0_XML_PM.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-A.WL.PM.FILE_WL_LTE_COMMON_TDD_V3.0_XML_PM.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-A.WL.PM.FILE_WL_LTE_ENB_TDD_V2.9_CSV_PM.*"+regiog_c+".*\\.zip$")){
                  if(fileName.matches("^tpd_eutrancell_q-ODM-A\\.WL\\.PM\\.FILE_WL_4G_V2\\.6\\.0_ENODEB_PM.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-A.WL.PM.FILE_WL_4G_V2.7.0_ENODEB.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-.*_V2.9.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-A.WL.PM.FILE_WL_LTE_COMMON_FDD_V3.0_XML_PM.*"+regiog_c+".*\\.zip$")||fileName.matches("^tpd_eutrancell_q-ODM-A.WL.PM.FILE_WL_LTE_COMMON_TDD_V3.0_XML_PM.*"+regiog_c+".*\\.zip$")){
                     File file = new File(outPath + "/" + fileName);
@@ -68,7 +69,7 @@ public class FtpToDisk {
                     //System.out.println("ZIP File:  "+fileName);
                     fc.retrieveFile(fileName,out );
                 }
-
+                }
             }
         }finally {
             if(out!=null){
