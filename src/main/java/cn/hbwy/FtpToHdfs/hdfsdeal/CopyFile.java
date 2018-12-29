@@ -6,7 +6,6 @@ import cn.hbwy.FtpToHdfs.threadpool.MiddleStatus;
 import cn.hbwy.FtpToHdfs.threadpool.ThreadPool;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import cn.hbwy.FtpToHdfs.hdfsdeal.FindCsv;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -73,7 +72,7 @@ public class CopyFile {
                 public void run() {
 
                     String fileName = file.getName();
-                    if (fileName.contains("ODM-A.WL.PM.FILE_WL_4G_V2.6.0_ENODEB_PM")) {
+                    if (fileName.matches("ODM-.*_V2.6.0_.*")) {
                        // System.out.println(file.length()+":"+finalPath + "/ODM-A.WL.PM.FILE_WL_4G_V2.6.0_ENODEB_PM/" +region+"/"+ file.getName());
                         logger.info(file.length()+":"+file.getAbsolutePath());
                         System.out.println(file.length()+":"+file.getAbsolutePath());
@@ -91,7 +90,7 @@ public class CopyFile {
                             e.printStackTrace();
                         }
 
-                    } else if (fileName.contains("ODM-A.WL.PM.FILE_WL_4G_V2.7.0_ENODEB")) {
+                    } else if (fileName.matches("ODM-.*_V2.7.0.*")) {
                         try {
                                   File f=new File(finalPath + "/ODM-A.WL.PM.FILE_WL_4G_V2.7.0_ENODEB/" +region+"/"+ file.getName());
 
@@ -128,7 +127,7 @@ public class CopyFile {
                             logger.error(e);
                             e.printStackTrace();
                         }
-                    } else if (fileName.contains("ODM-A.WL.PM.FILE_WL_LTE_COMMON_FDD_V3.0_XML_PM")) {
+                    } else if (fileName.matches("ODM-.*_FDD_V3.0_.*")) {
 
                         try {
                             File f=new File(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_COMMON_FDD_V3.0_XML_PM/" +region+"/"+ file.getName());
@@ -147,7 +146,7 @@ public class CopyFile {
                             logger.error(e);
                             e.printStackTrace();
                         }
-                    }  else if (fileName.contains("ODM-A.WL.PM.FILE_WL_LTE_COMMON_TDD_V3.0_XML_PM")) {
+                    }  else if (fileName.matches("ODM-.*_TDD_V3.0_.*")) {
 
                         try {
                              File f=new File(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_COMMON_TDD_V3.0_XML_PM/" +region+"/"+ file.getName());

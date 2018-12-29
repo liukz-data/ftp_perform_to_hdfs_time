@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ftp_perform_to_hdfs_time" />
         <module name="FtpToHdfs" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="FtpToHdfs1" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="ftp_perform_to_hdfs_time" target="1.7" />
+      <module name="FtpToHdfs" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
