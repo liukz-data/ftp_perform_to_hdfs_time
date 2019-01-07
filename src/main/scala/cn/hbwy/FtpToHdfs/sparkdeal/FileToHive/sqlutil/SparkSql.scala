@@ -1,6 +1,5 @@
 package cn.hbwy.FtpToHdfs.sparkdeal.FileToHive.sqlutil
 
-import cn.hbwy.FtpToHdfs.sparkdeal.FileToHive.FiveDirToHive
 import cn.hbwy.FtpToHdfs.sparkdeal.FileToHive.FiveDirToHive1031._
 import cn.hbwy.FtpToHdfs.sparkdeal.FileToHive.log_util.Log4jUtil
 import org.apache.spark.{SparkConf, SparkContext}

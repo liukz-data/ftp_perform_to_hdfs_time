@@ -1,4 +1,4 @@
-package main_deal;
+package cn.hbwy.FtpToHdfs.main_deal;
 
 import org.apache.commons.io.FileUtils;
 

@@ -20,7 +20,7 @@ public class FTPClientConfigure {
     }
 
     public void setHost(String host) {
-        this. host = host;
+        this.host = host;
     }
 
     public int getPort() {
@@ -28,7 +28,7 @@ public class FTPClientConfigure {
     }
 
     public void setPort(int port) {
-        this. port = port;
+        this.port = port;
     }
 
     public String getUsername() {
@@ -36,7 +36,7 @@ public class FTPClientConfigure {
     }
 
     public void setUsername(String username) {
-        this. username = username;
+        this.username = username;
     }
 
     public String getPassword() {
@@ -44,7 +44,7 @@ public class FTPClientConfigure {
     }
 
     public void setPassword(String password) {
-        this. password = password;
+        this.password = password;
     }
 
 
@@ -53,7 +53,7 @@ public class FTPClientConfigure {
     }
 
     public void setPassiveMode(String passiveMode) {
-        this. passiveMode = passiveMode;
+        this.passiveMode = passiveMode;
     }
 
     public String getEncoding() {
@@ -61,47 +61,47 @@ public class FTPClientConfigure {
     }
 
     public void setEncoding(String encoding) {
-        this. encoding = encoding;
+        this.encoding = encoding;
     }
 
     public int getClientTimeout() {
         return clientTimeout;
     }
 
-    public void setClientTimeout( int clientTimeout) {
-        this. clientTimeout = clientTimeout;
+    public void setClientTimeout(int clientTimeout) {
+        this.clientTimeout = clientTimeout;
     }
 
     public int getThreadNum() {
         return threadNum;
     }
 
-    public void setThreadNum( int threadNum) {
-        this. threadNum = threadNum;
+    public void setThreadNum(int threadNum) {
+        this.threadNum = threadNum;
     }
 
     public int getTransferFileType() {
         return transferFileType;
     }
 
-    public void setTransferFileType( int transferFileType) {
-        this. transferFileType = transferFileType;
+    public void setTransferFileType(int transferFileType) {
+        this.transferFileType = transferFileType;
     }
 
     public boolean isRenameUploaded() {
         return renameUploaded;
     }
 
-    public void setRenameUploaded( boolean renameUploaded) {
-        this. renameUploaded = renameUploaded;
+    public void setRenameUploaded(boolean renameUploaded) {
+        this.renameUploaded = renameUploaded;
     }
 
     public int getRetryTimes() {
         return retryTimes;
     }
 
-    public void setRetryTimes( int retryTimes) {
-        this. retryTimes = retryTimes;
+    public void setRetryTimes(int retryTimes) {
+        this.retryTimes = retryTimes;
     }
 
     public String getWorkPath() {
