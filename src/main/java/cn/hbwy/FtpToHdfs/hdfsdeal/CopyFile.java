@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 
+/**
+ * 解析解压文件，放入对应版本文件夹中
+ */
 public class CopyFile {
     private String zip_outPath = "/root/temp/extra_out/out";
     private String finalPath = "/root/temp/final/out1";
@@ -55,12 +58,6 @@ public class CopyFile {
             }
             File f5 = new File(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_COMMON_TDD_V3.0_XML_PM/" + region + "/reduce_error.csv");
             f5.createNewFile();
-            /*File d6=new File(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_ENB_TDD_V2.9/" +region);
-            if(!d6.exists()){
-                d6.mkdirs();
-            }
-            File f6=new File(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_ENB_TDD_V2.9/" +region+"/reduce_error.csv");
-            f6.createNewFile();*/
         } catch (IOException e) {
             logger.error(e);
             e.printStackTrace();
@@ -73,21 +70,11 @@ public class CopyFile {
                 public void run() {
 
                     String fileName = file.getName();
-                    //if (fileName.matches("ODM-.*_V2.6.0_.*")) {
-                    //TDD_V3.0_FILE_CSV
                     if (fileName.matches("ODM-.*TDD_V3.0_FILE_CSV.*")) {
-                        // System.out.println(file.length()+":"+finalPath + "/ODM-A.WL.PM.FILE_WL_4G_V2.6.0_ENODEB_PM/" +region+"/"+ file.getName());
                         logger.info(file.length() + ":" + file.getAbsolutePath());
                         System.out.println(file.length() + ":" + file.getAbsolutePath());
                         try {
                             File f = new File(finalPath + "/ODM-A.WL.PM.FILE_WL_TDD_V3_0_FILE_CSV_PM/" + region + "/" + file.getName());
-                            System.out.println("----------------------------------------------------");
-                            System.out.println("----------------------------------------------------");
-                            System.out.println("----------------------------------------------------");
-                            System.out.println("f.getAbsolutePath():"+f.getAbsolutePath());
-                            System.out.println("----------------------------------------------------");
-                            System.out.println("----------------------------------------------------");
-
                             if (!f.exists()) {
                                 f.createNewFile();
                             }
@@ -108,9 +95,6 @@ public class CopyFile {
                                 f.createNewFile();
                             }
                             logger.info(file.length() + ":" + file.getAbsolutePath());
-                            //System.out.println(file.length()+":"+(finalPath + "/ODM-A.WL.PM.FILE_WL_4G_V2.7.0_ENODEB_FDD_CORBA_PM/" +region+"/"+ file.getName()));
-                            System.out.println(file.length() + ":" + file.getAbsolutePath());
-
                             FileUtils.copyFile(file, new FileOutputStream(f));
                             int i = MiddleStatus.getNowFiles();
                             MiddleStatus.setNowFiles(i + 1);
@@ -141,14 +125,10 @@ public class CopyFile {
 
                         try {
                             File f = new File(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_COMMON_FDD_V3.0_XML_PM/" + region + "/" + file.getName());
-
                             if (!f.exists()) {
                                 f.createNewFile();
                             }
                             logger.info(file.length() + ":" + file.getAbsolutePath());
-                            //System.out.println(file.length()+":"+(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_COMMON_FDD_V3.0_XML_PM/" +region+"/"+ file.getName()));
-                            System.out.println(file.length() + ":" + file.getAbsolutePath());
-
                             FileUtils.copyFile(file, new FileOutputStream(f));
                             int i = MiddleStatus.getNowFiles();
                             MiddleStatus.setNowFiles(i + 1);
@@ -157,16 +137,12 @@ public class CopyFile {
                             e.printStackTrace();
                         }
                     } else if (fileName.matches("ODM-.*_TDD_V3.0_.*")) {
-
                         try {
                             File f = new File(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_COMMON_TDD_V3.0_XML_PM/" + region + "/" + file.getName());
                             if (!f.exists()) {
                                 f.createNewFile();
                             }
                             logger.info(file.length() + ":" + file.getAbsolutePath());
-                            //System.out.println(file.length()+":"+(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_COMMON_FDD_V3.0_XML_PM/" +region+"/"+ file.getName()));
-                            System.out.println(file.length() + ":" + file.getAbsolutePath());
-
                             FileUtils.copyFile(file, new FileOutputStream(f));
                             int i = MiddleStatus.getNowFiles();
                             MiddleStatus.setNowFiles(i + 1);
@@ -174,28 +150,8 @@ public class CopyFile {
                             logger.error(e);
                             e.printStackTrace();
                         }
-                    }/*else if (fileName.contains("ODM-A.WL.PM.FILE_WL_LTE_ENB_TDD_V2.9")) {
-
-                        try {
-                            File f=new File(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_ENB_TDD_V2.9/" +region+"/"+ file.getName());
-                              if(!f.exists()){
-                                f.createNewFile();
-                            }
-                            logger.info(file.length()+":"+file.getAbsolutePath());
-                           // System.out.println(file.length()+":"+(finalPath + "/ODM-A.WL.PM.FILE_WL_LTE_COMMON_TDD_V3.0_XML_PM/" +region+"/"+ file.getName()));
-                            System.out.println(file.length()+":"+file.getAbsolutePath());
-
-                            FileUtils.copyFile(file,new FileOutputStream(f) );
-                            int i= MiddleStatus.getNowFiles();
-                            MiddleStatus.setNowFiles(i+1);
-                        } catch (IOException e) {
-                            logger.error(e);
-                            e.printStackTrace();
-                        }
-
-                    }*/ else {
+                    } else {
                         logger.info(file.length() + ":" + file.getAbsolutePath());
-                        //System.out.println(file.length()+":"+file.getName());
                         int i = MiddleStatus.getNowFiles();
                         MiddleStatus.setNowFiles(i + 1);
                         System.out.println("else:" + file.length() + ":" + file.getAbsolutePath());

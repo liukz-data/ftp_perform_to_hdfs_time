@@ -3,6 +3,9 @@ package cn.hbwy.FtpToHdfs.hdfsdeal;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * 查找CSV文件
+ */
 public class FindCsv {
     private String zip_outPath = "/root/temp/extra_out/out";
     private ArrayList<File> files_l = new ArrayList<File>();
